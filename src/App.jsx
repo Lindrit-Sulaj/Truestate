@@ -1,6 +1,13 @@
+import React from "react"
+import { Navbar } from './components';
+import { Hero } from './sections'
+
 function App() {
   return (
-    <h1>Truestate</h1>
+    <div>
+      <Navbar />
+      <Hero />
+    </div>
   )
 }
 
