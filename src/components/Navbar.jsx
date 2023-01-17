@@ -53,8 +53,8 @@ const Navbar = () => {
         </ul>
 
         <div className='hidden md:flex gap-2'>
-          <motion.button className='px-2 text-neutral-900'>Log in</motion.button>
-          <motion.button className='bg-blue-custom rounded-sm px-3 py-2 text-white'>Sign Up</motion.button>
+          <motion.button className='px-2 text-neutral-900 hover:bg-neutral-200 rounded-sm'>Log in</motion.button>
+          <motion.button className='bg-blue-custom hover:bg-blue-500 rounded-sm px-3 py-2 text-white'>Sign Up</motion.button>
         </div>
 
         <motion.div className='md:hidden' animate={navOpened ? 'animate' : 'exit'} >

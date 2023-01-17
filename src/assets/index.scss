@@ -1,1 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Rubik:wght@400;500;600;700&display=swap');
+
+img {
+  max-width: 100%;
+}
+
+.hero-bg {
+  background-color: hsla(0, 0%, 100%, 1);
+  background-image:
+    radial-gradient(at 14% 72%, hsla(195, 100%, 88%, 1) 0px, transparent 50%),
+    radial-gradient(at 74% 37%, hsla(202, 70%, 76%, 1) 0px, transparent 50%);
+}
