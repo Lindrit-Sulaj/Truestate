@@ -6,7 +6,7 @@ const Hero = () => {
 return (
   <section className='container mx-auto  mt-[80px] rounded-xl flex flex-col lg:flex-row items-center'>
     <div className="py-4 px-6 w-full lg:w-1/2 xl:mx-12">
-      <h1 className='flex flex-col items-center gap-0 text-[36px] font-semibold uppercase lg:items-start lg:font-bold lg:text-5xl lg:gap-4'>
+      <h1 className='flex flex-col tracking-wider lg:tracking-wide items-center gap-0 text-[36px] font-semibold uppercase lg:items-start lg:font-bold lg:text-5xl lg:gap-4'>
         <span className='block'>Find your</span>
         <span className='flex justify-start gap-4 items-center text-blue-custom tracking-wider'>
           <div className='w-[40px] h-[4px] rounded-md bg-blue-custom'></div>

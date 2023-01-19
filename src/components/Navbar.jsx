@@ -34,7 +34,7 @@ const Navbar = () => {
   const [navOpened, setNavOpened] = useState(false);
 
   return (
-    <div className='bg-white fixed top-0 w-full'>
+    <div className='bg-white fixed top-0 w-full z-50'>
       <nav className='container h-[75px] flex justify-between items-center mx-auto px-2'>
         <h1 className='font-bold font-secondary flex flex-row-reverse gap-2 text-xl'>
           truestate
@@ -54,21 +54,18 @@ const Navbar = () => {
 
         <div className='hidden md:flex gap-2'>
           <motion.button className='px-2 text-neutral-900 hover:bg-neutral-200 rounded-sm'>Log in</motion.button>
-          <motion.button className='bg-blue-custom hover:bg-blue-500 rounded-sm px-3 py-2 text-white'>Sign Up</motion.button>
+          <motion.button className='bg-blue-custom hover:bg-blue-500 rounded-md px-3 py-2 text-white'>Sign Up</motion.button>
         </div>
 
         <motion.div className='md:hidden' animate={navOpened ? 'animate' : 'exit'} >
-          <button className='flex flex-col items-center gap-1' onClick={() => setNavOpened(!navOpened)}>
+          <button className='flex flex-col overflow-hidden items-center gap-1' onClick={() => setNavOpened(!navOpened)}>
             <motion.div custom="bottom" variants={barsVariant} className="w-6 bg-neutral-900 h-[2px] rounded-full"></motion.div>
             <motion.div variants={{ exit: { opacity: 1, }, animate: { opacity: 0 } }} className="w-6 bg-neutral-900 h-[2px] rounded-full"></motion.div>
             <motion.div custom="top" variants={barsVariant} className="w-6 bg-neutral-900 h-[2px] rounded-full"></motion.div>
           </button>
 
-          <motion.div variants={slider} className='absolute h-[calc(100vh-70px)] left-0 bg-white top-[70px]'>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem consectetur dicta provident consequuntur, cumque fugit molestiae fugiat quibusdam tempore totam quod adipisci, corrupti atque est nulla. Inventore ipsam atque quae.
-            </p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti sequi doloremque magni, sit dolorum nemo quidem ducimus quasi nesciunt? Perspiciatis aliquam libero nesciunt autem voluptas labore minima nihil. Vel, repellendus?</p>
+          <motion.div initial={false} variants={slider} className='absolute h-[calc(100vh-70px)] left-0 bg-white w-full overflow-hidden top-[70px]'>
+            <h1>Hi</h1>
           </motion.div>
         </motion.div>
       </nav>
