@@ -8,7 +8,6 @@ function App() {
       <Navbar />
       <Hero />
       <AboutUs />
-      <div className="h-[200vh]"></div>
     </div>
   )
 }
