@@ -88,7 +88,7 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
             <span class="material-symbols-outlined text-neutral-400">
               dashboard
             </span>
-            <span className="text-neutral-500 font-medium font-secondary">{squareMeters}</span> 
+            <span className="text-neutral-500 font-medium font-secondary">{squareMeters}</span>
           </div>
         </div>
 
@@ -99,8 +99,68 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
 const Opened = ({ image, discount, title, price, location, capacity, rooms, squareMeters, formatter, close }) => {
   return (
     <Backdrop handleClick={close}>
-      <motion.div drag="y" dragConstraints={{ top: 50, bottom: 50 }} layout layoutId={title} className="w-[80%] overflow-y-auto md:w-[600px] lg:w-[800px] h-[90vh] bg-white z-[55]">
-        
+      <motion.div onClick={(e) => e.stopPropagation()} layout layoutId={title} className="opened_cardlayout w-[90%] overflow-y-auto md:w-[600px] lg:w-[800px] h-[90vh] bg-white z-[55] rounded-md">
+        <img className="h-[25%] md:h-[30%] lg:h-[35%] w-full object-cover rounded-b-lg" src={image} alt={title} />
+        <div className="px-6">
+          <h1 className='text-2xl font-semibold mt-6'>{title}</h1>
+          <p className="flex items-center gap-1 text-[15px] text-neutral-700">
+            <span class="material-symbols-outlined text-xl">
+              map
+            </span>
+            <span>{location}</span>
+          </p>
+          <div className="mt-7">
+            <h3 className='mt-4 text-lg font-secondary font-medium text-blue-custom'>Apartment information</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 mt-3">
+              <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
+                <span class="material-symbols-outlined">
+                  {capacity === 1 ? 'Person' : capacity === 2 ? 'Group' : 'Groups'}
+                </span>
+                <span>{capacity} {capacity === 1 ? 'Person' : "People"}</span>
+              </div>
+              <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
+                <span class="material-symbols-outlined">
+                  dashboard
+                </span>
+                <span>{squareMeters} m²</span>
+              </div>
+              <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
+                <span class="material-symbols-outlined">
+                  bed
+                </span>
+                <span>{rooms} {rooms > 1 ? "rooms" : "room"}</span>
+              </div>
+              <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
+                <span class="material-symbols-outlined">
+                  credit_card
+                </span>
+                <span>${formatter.format(price)}</span>
+              </div>
+            </div>
+          </div>
+          <div className="mt-7 ">
+            <h3 className='text-lg font-secondary font-medium text-blue-custom'>Apartment description</h3>
+            <p className="text-neutral-600 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quod officiis architecto? Pariatur, ipsum impedit. Neque molestiae excepturi cumque ut consectetur id quibusdam hic reiciendis facilis quos architecto, veritatis inventore.</p>
+            <p className="text-neutral-600 my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quis reiciendis asperiores hic culpa quod nobis expedita dignissimos ipsam itaque eos totam animi ipsum commodi vero, recusandae voluptates, repudiandae id!</p>
+          </div>
+          <div className="mt-7">
+            <div className='flex gap-3 items-center'>
+              <img className='w-14 h-14 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWZvdQfmuQAdPFIgXjTpYlSwI4YEVI1XvsVg&usqp=CAU" alt="Apartment Owner" />
+              <div>
+                <p className='font-semibold font-secondary text-[17px]'>Rachel Schmidt <span className='text-neutral-500 text-sm'>Owner</span></p>
+                <a className='text-neutral-400' >rachelschimdt404@gmail.com</a>
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-end mt-8 mb-8">
+            <button onClick={close} className="flex gap-1 bg-blue-custom px-4 py-2 text-white rounded-md hover:bg-blue-500">
+              <span className='material-symbols-outlined'>
+                credit_card
+              </span>
+              <span>Continue checkout</span>
+            </button>
+          </div>
+        </div>
       </motion.div>
     </Backdrop>
   )
