@@ -56,7 +56,21 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
   }
 
   return (
-    <motion.div onClick={open} layout layoutId={title} style={styles} className="bg-no-repeat bg-cover h-[500px] bg-center py-3 px-4 flex flex-col md:rounded-lg z-10 w-full md:w-[350px] lg:w-[370px]">
+    <motion.div
+      // variants={{
+      //   exit: {
+      //     opacity: 0,
+      //     x: -40
+      //   },
+      //   animate: {
+      //     x: 0,
+      //     opacity: 1,
+      //     transition: {
+      //       type: 'just'
+      //     }
+      //   }
+      // }}
+      onClick={open} layout layoutId={title} style={styles} className="bg-no-repeat bg-cover h-[500px] bg-center py-3 px-4 flex flex-col md:rounded-lg z-10 w-full md:w-[350px] lg:w-[370px]">
       <p className='bg-neutral-600 text-right block ml-auto px-6 py-2 rounded-full text-white'>{discount}</p>
       <div className="bg-white mt-auto border-solid border-[1px] border-neutral-200 translate-y-12 rounded-md py-2 px-3">
         <div className="flex mt-2">
@@ -65,7 +79,7 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
         </div>
 
         <div className="flex gap-2 text-neutral-700 mb-3 mt-3">
-          <span class="material-symbols-outlined">
+          <span className="material-symbols-outlined">
             map
           </span>
           <p>{location}</p>
@@ -73,19 +87,19 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
         <hr />
         <div className="flex gap-6 pt-2 pb-1 px-2 items-center">
           <div className="flex gap-2 whitespace-nowrap">
-            <span class="material-symbols-outlined text-neutral-400">
+            <span className="material-symbols-outlined text-neutral-400">
               {capacity === 1 ? 'Person' : capacity === 2 ? 'Group' : 'Groups'}
             </span>
             <span className="text-neutral-500 font-medium font-secondary">{capacity}</span>
           </div>
           <div className="flex gap-2 whitespace-nowrap">
-            <span class="material-symbols-outlined text-neutral-400">
+            <span className="material-symbols-outlined text-neutral-400">
               bed
             </span>
             <span className="text-neutral-500 font-medium font-secondary">{rooms}</span>
           </div>
           <div className="flex gap-2 whitespace-nowrap">
-            <span class="material-symbols-outlined text-neutral-400">
+            <span className="material-symbols-outlined text-neutral-400">
               dashboard
             </span>
             <span className="text-neutral-500 font-medium font-secondary">{squareMeters}</span>
@@ -99,7 +113,7 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
 const Opened = ({ image, discount, title, price, location, capacity, rooms, squareMeters, formatter, close }) => {
   return (
     <Backdrop handleClick={close}>
-      <motion.div onClick={(e) => e.stopPropagation()} layout layoutId={title} className="opened_cardlayout w-[90%] overflow-y-auto md:w-[600px] lg:w-[800px] h-[90vh] bg-white z-[55] rounded-md">
+      <motion.div onClick={(e) => e.stopPropagation()} layout layoutId={title} className="opened_cardlayout w-[90%] overflow-y-auto overflow-x-hidden md:w-[600px] lg:w-[800px] h-[90vh] bg-white z-[55] rounded-md">
         <img className="h-[25%] md:h-[30%] lg:h-[35%] w-full object-cover rounded-b-lg" src={image} alt={title} />
         <div className="px-6">
           <h1 className='text-2xl font-semibold mt-6'>{title}</h1>
@@ -113,25 +127,25 @@ const Opened = ({ image, discount, title, price, location, capacity, rooms, squa
             <h3 className='mt-4 text-lg font-secondary font-medium text-blue-custom'>Apartment information</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-y-3 mt-3">
               <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                   {capacity === 1 ? 'Person' : capacity === 2 ? 'Group' : 'Groups'}
                 </span>
                 <span>{capacity} {capacity === 1 ? 'Person' : "People"}</span>
               </div>
               <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                   dashboard
                 </span>
                 <span>{squareMeters} m²</span>
               </div>
               <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                   bed
                 </span>
                 <span>{rooms} {rooms > 1 ? "rooms" : "room"}</span>
               </div>
               <div className="flex gap-2 text-[17px] border-solid border-y-[1px] py-2 border-neutral-200">
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                   credit_card
                 </span>
                 <span>${formatter.format(price)}</span>

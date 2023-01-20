@@ -7,7 +7,7 @@ const Backdrop = ({ children, handleClick }) => {
     <div onClick={() => { 
       handleClick();
       document.body.style.overflowY = "scroll" 
-    }} className='fixed z-[100] top-0 w-full py-10
+    }} className='backdrop fixed z-[100] top-0 w-full py-10
     min-h-screen flex justify-center items-center overflow-hidden bg-[rgba(0,0,0,0.9)]'>
       {children}
     </div>

@@ -17,8 +17,9 @@ img {
     radial-gradient(at 74% 37%, hsla(202, 70%, 76%, 1) 0px, transparent 50%);
 }
 
-.opened_cardlayout::-webkit-scrollbar-thumb {
-  background: rgb(150, 145, 145);
+
+.opened_cardlayout::-webkit-scrollbar {
+  width: 0px
 }
 
 /* width */
