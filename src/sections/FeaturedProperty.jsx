@@ -1,27 +1,36 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { PropertyCard } from '../components';
 import { motion, useInView } from 'framer-motion';
-
+import { useTheme } from '../ThemeContext';
 
 const FeaturedProperty = () => {
+  const { setCurrentSection } = useTheme();
   const sectionRef = useRef();
-  const isInView = useInView(sectionRef)
+  const [isViewed, setIsViewed] = useState(false);
+  const isInView = useInView(sectionRef);
+
+  useEffect(() => {
+    if (isInView) {
+      setIsViewed(true)
+      setCurrentSection('Featured')
+    }
+  }, [isInView]);
 
   return (
-    <section ref={sectionRef} className="featured-property container py-20 mx-auto">
+    <section ref={sectionRef} id="Featured" className="featured-property container py-20 mx-auto">
       <h1 className='text-center text-4xl font-bold mb-3'>Featured Properties</h1>
       <p className='text-center text-[17px] text-neutral-600 max-w-xl mx-auto'>Here are some of many properties you can find on our website. Click on a property to see more details.</p>
       <motion.div
-       animate={isInView ? 'enter' : 'exit'}
-       variants={{
-        enter: {
-          transition: {
-            delayChildren: .2,
-            staggerChildren: .2,
+        animate={isViewed ? 'enter' : 'exit'}
+        variants={{
+          enter: {
+            transition: {
+              delayChildren: .6,
+              staggerChildren: .5,
+            }
           }
-        }
-       }}
-       className='my-8 flex justify-center gap-x-4 gap-y-20 flex-wrap'>
+        }}
+        className='my-8 flex justify-center gap-x-12 gap-y-20 flex-wrap'>
         <PropertyCard
           image="https://images.pexels.com/photos/409842/pexels-photo-409842.jpeg?auto=compress&cs=tinysrgb&w=600"
           title="Modern apartment complex"

@@ -57,19 +57,17 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
 
   return (
     <motion.div
-      // variants={{
-      //   exit: {
-      //     opacity: 0,
-      //     x: -40
-      //   },
-      //   animate: {
-      //     x: 0,
-      //     opacity: 1,
-      //     transition: {
-      //       type: 'just'
-      //     }
-      //   }
-      // }}
+      variants={{
+        exit: {
+          opacity: 0,
+        },
+        enter: {
+          opacity: 1,
+          transition: {
+            type: 'just'
+          }
+        }
+      }}
       onClick={open} layout layoutId={title} style={styles} className="bg-no-repeat bg-cover h-[500px] bg-center py-3 px-4 flex flex-col md:rounded-lg z-10 w-full md:w-[350px] lg:w-[370px]">
       <p className='bg-neutral-600 text-right block ml-auto px-6 py-2 rounded-full text-white'>{discount}</p>
       <div className="bg-white mt-auto border-solid border-[1px] border-neutral-200 translate-y-12 rounded-md py-2 px-3">
@@ -118,7 +116,7 @@ const Opened = ({ image, discount, title, price, location, capacity, rooms, squa
         <div className="px-6">
           <h1 className='text-2xl font-semibold mt-6'>{title}</h1>
           <p className="flex items-center gap-1 text-[15px] text-neutral-700">
-            <span class="material-symbols-outlined text-xl">
+            <span className="material-symbols-outlined text-xl">
               map
             </span>
             <span>{location}</span>

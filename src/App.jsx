@@ -1,6 +1,6 @@
 import React from "react"
 import { Navbar } from './components';
-import { Hero, AboutUs, FeaturedProperty } from './sections'
+import { Hero, AboutUs, FeaturedProperty, TrustedWebsite } from './sections'
 
 function App() {
   return (
@@ -9,6 +9,7 @@ function App() {
       <Hero />
       <AboutUs />
       <FeaturedProperty />
+      <TrustedWebsite />
     </div>
   )
 }

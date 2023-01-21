@@ -1,10 +1,21 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Container } from 'postcss';
+import { useTheme } from '../ThemeContext'
 
 const AboutUs = () => {
+  const { currentSection, setCurrentSection } = useTheme();
+  const aboutUsRef = useRef();
+  const isInView = useInView(aboutUsRef);
+
+  useEffect(() => {
+    if (isInView) {
+      setCurrentSection('About')
+    }
+  }, [isInView]);
+
   return (
-    <section className="about-us py-16 lg:py-[76px] bg-background text-white overflow-hidden">
+    <section ref={aboutUsRef} id="About" className="about-us py-16 lg:py-[76px] bg-background text-white overflow-hidden">
       <motion.div
         className="container mx-auto flex flex-wrap-reverse justify-center items-center">
         <div className='w-full lg:w-[45%]'>

@@ -47,8 +47,8 @@ const Navbar = () => {
         </h1>
         <ul className='hidden md:flex gap-4'>
           <Link label="Home" />
-          <Link label="Blog" />
-          <Link label="Services" />
+          <Link label="About" />
+          <Link label="Featured" />
           <Link label="Reviews" />
         </ul>
 
