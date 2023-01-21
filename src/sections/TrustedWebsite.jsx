@@ -5,7 +5,7 @@ import imageTwo from '../assets/trusted-website-2.jpg';
 
 const TrustedWebsite = () => {
   return (
-    <section className="flex flex-wrap justify-center container mx-auto py-12 overflow-x-hidden gap-y-8">
+    <section className="flex flex-wrap justify-center container mx-auto py-14 overflow-x-hidden gap-y-8">
       <motion.div transition={{ type: 'just', duration: .5 }} initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1}} className='w-full md:w-1/2 flex flex-col px-4 justify-center items-start gap-5'>
         <h1 className="text-4xl lg:text-5xl font-bold max-w-[510px]">The Most Trusted Real Estate Website</h1>
         <hr className="w-full max-w-[120px] border-none h-[4px] bg-blue-custom rounded-md mb-4"/>
