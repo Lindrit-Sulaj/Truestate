@@ -64,7 +64,7 @@ const Navbar = () => {
             <motion.div custom="top" variants={barsVariant} className="w-6 bg-neutral-900 h-[2px] rounded-full"></motion.div>
           </button>
 
-          <motion.div initial={false} variants={slider} className='absolute h-[calc(100vh-70px)] left-0 bg-white w-full overflow-hidden top-[70px]'>
+          <motion.div initial={false} variants={slider} className='absolute h-[calc(100vh-70px)] bg-white w-full overflow-hidden left-0 top-[70px]'>
             <h1>Hi</h1>
           </motion.div>
         </motion.div>
