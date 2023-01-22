@@ -8,7 +8,7 @@ const barsVariant = {
     if (direction === "bottom") {
       return { rotate: 50, y: 5 }
     } else {
-      return { rotate: 130, y: -7  }
+      return { rotate: 130, y: -7 }
     }
   },
   exit: {
@@ -65,7 +65,13 @@ const Navbar = () => {
           </button>
 
           <motion.div initial={false} variants={slider} className='absolute h-[calc(100vh-70px)] bg-white w-full overflow-hidden left-0 top-[70px]'>
-            <h1>Hi</h1>
+            <ul className='flex flex-col gap-4 px-8 mt-6 text-xl text-neutral-500'>
+              {
+                ["Home", "About", "Featured", "Reviews"].map((elem, id) => (
+                  <li className='hover:text-neutral-700 transition-all font-medium' onClick={() => setNavOpened(false)} key={id}><a href={`#${elem}`}>{elem}</a></li>
+                ))
+              }
+            </ul>
           </motion.div>
         </motion.div>
       </nav>

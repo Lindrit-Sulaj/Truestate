@@ -1,9 +1,20 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useTheme } from '../ThemeContext';
 
 const Testimonials = () => {
+  const { currentSection, setCurrentSection } = useTheme();
+  const testimonialsRef = useRef();
+  const isInView = useInView(testimonialsRef);
+
+  useEffect(() => {
+    if (isInView) {
+      setCurrentSection('Reviews')
+    }
+  }, [isInView]);
+
   return (
-    <section className="testimonials bg-background py-16 pb-20">
+    <section ref={testimonialsRef} id="Reviews" className="testimonials bg-background py-16 pb-20">
       <p className='text-blue-custom text-center mb-3 uppercase font-semibold'>Testimonials</p>
       <h1 className='text-white text-3xl lg:text-4xl text-center px-3 font-bold'>Words from our customers</h1>
       <p className='text-center text-neutral-300 mt-4 mb-12'>Here's what our clients say about us</p>

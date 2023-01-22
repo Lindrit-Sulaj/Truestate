@@ -20,18 +20,18 @@ const AboutUs = () => {
         className="container mx-auto flex flex-wrap-reverse justify-center items-center">
         <div className='w-full lg:w-[45%]'>
           <motion.img
-            // initial={{
-            //   x: -200,
-            //   opacity: 0,
-            //   rotate: 10,
-            // }}
-            // whileInView={{
-            //   x: 0,
-            //   opacity: 1,
-            //   rotate: 0,
-            //   transition: { duration: .5, delay: .1 }
-            // }}
-            // transition={{ type: 'just' }}
+            initial={{
+              x: -100,
+              opacity: 0,
+              rotate: 5,
+            }}
+            whileInView={{
+              x: 0,
+              opacity: 1,
+              rotate: 0,
+              transition: { duration: .5, delay: .1 }
+            }}
+            transition={{ type: 'just' }}
             className='object-cover w-[75%] md:w-[60%] mx-auto my-4 rounded-lg' src="https://images.pexels.com/photos/3914752/pexels-photo-3914752.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
         </div>
         <motion.div
