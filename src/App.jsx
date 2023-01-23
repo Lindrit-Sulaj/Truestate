@@ -1,5 +1,5 @@
 import React from "react"
-import { Navbar } from './components';
+import { Navbar, Footer } from './components';
 import { Hero, AboutUs, FeaturedProperty, TrustedWebsite, Faq, Testimonials } from './sections'
 
 function App() {
@@ -12,6 +12,7 @@ function App() {
       <TrustedWebsite />
       <Faq />
       <Testimonials />
+      <Footer />
     </div>
   )
 }

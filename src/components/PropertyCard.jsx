@@ -155,23 +155,22 @@ const Opened = ({ image, discount, title, price, location, capacity, rooms, squa
             <p className="text-neutral-600 my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque quod officiis architecto? Pariatur, ipsum impedit. Neque molestiae excepturi cumque ut consectetur id quibusdam hic reiciendis facilis quos architecto, veritatis inventore.</p>
             <p className="text-neutral-600 my-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit quis reiciendis asperiores hic culpa quod nobis expedita dignissimos ipsam itaque eos totam animi ipsum commodi vero, recusandae voluptates, repudiandae id!</p>
           </div>
-          <div className="mt-7">
-            <div className='flex gap-3 items-center'>
+          <div className="mt-7 mb-3 flex justify-between flex-wrap md:flex-nowrap gap-3 items-center">
+            <div className='flex w-full md:w-auto gap-3 items-center'>
               <img className='w-14 h-14 rounded-full object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWZvdQfmuQAdPFIgXjTpYlSwI4YEVI1XvsVg&usqp=CAU" alt="Apartment Owner" />
               <div>
                 <p className='font-semibold font-secondary text-[17px]'>Rachel Schmidt <span className='text-neutral-500 text-sm'>Owner</span></p>
                 <a className='text-neutral-400' >rachelschimdt404@gmail.com</a>
               </div>
             </div>
-          </div>
-          <div className="flex justify-end mt-8 mb-8">
-            <button onClick={close} className="flex gap-1 bg-blue-custom px-4 py-2 text-white rounded-md hover:bg-blue-500">
+            <button onClick={close} className="flex gap-1 w-full md:w-auto bg-blue-custom px-4 py-2 text-white rounded-md hover:bg-blue-500">
               <span className='material-symbols-outlined'>
                 credit_card
               </span>
               <span>Continue checkout</span>
             </button>
           </div>
+
         </div>
       </motion.div>
     </Backdrop>
