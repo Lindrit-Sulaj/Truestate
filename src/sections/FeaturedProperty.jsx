@@ -25,7 +25,7 @@ const FeaturedProperty = () => {
         variants={{
           enter: {
             transition: {
-              delayChildren: .6,
+              delayChildren: .3,
               staggerChildren: .35,
             }
           }

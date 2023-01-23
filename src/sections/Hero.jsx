@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react';
-import HeroImage from "../assets/hero-image.png"
 import { motion, useInView } from 'framer-motion';
 import { useTheme } from '../ThemeContext';
 
@@ -62,7 +61,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <img className='w-full lg:w-1/2 lg:mt-[40px] xl:mt-0' src={HeroImage} alt="" />
+      <img className='w-full lg:w-1/2 lg:mt-[40px] xl:mt-0' src="https://ik.imagekit.io/0s9lwb2yr/Truestate/tr:w-700/hero-image_TbPcn5c1U.png" alt="" />
 
     </section>
   )

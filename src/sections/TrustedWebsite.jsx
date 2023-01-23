@@ -1,7 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import imageOne from '../assets/trusted-website-1.jpg';
-import imageTwo from '../assets/trusted-website-2.jpg';
 
 const TrustedWebsite = () => {
   return (
