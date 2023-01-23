@@ -111,6 +111,9 @@ const Normal = ({ image, discount, title, price, location, capacity, rooms, squa
 const Opened = ({ image, discount, title, price, location, capacity, rooms, squareMeters, formatter, close }) => {
   return (
     <Backdrop handleClick={close}>
+      <button onClick={close} className='absolute top-4 right-4'>
+        <span className="material-symbols-outlined text-white text-3xl">close</span>
+      </button>
       <motion.div onClick={(e) => e.stopPropagation()} layout layoutId={title} className="opened_cardlayout w-[90%] overflow-y-auto overflow-x-hidden md:w-[600px] lg:w-[800px] h-[90vh] bg-white z-[55] rounded-md">
         <img className="h-[25%] md:h-[30%] lg:h-[35%] w-full object-cover rounded-b-lg" src={image} alt={title} />
         <div className="px-6">
